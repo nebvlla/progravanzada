@@ -26,7 +26,6 @@ object Repositorio {
     fun buscarEmpleadoPorRut(rut: String): Empleado? =
         _empleados.find { it.rut.equals(rut.trim(), ignoreCase = true) }
 
-    // Firma pedida: generarLiquidacion(periodo, empleado)
     fun generarLiquidacion(periodo: String, empleado: Empleado): LiquidacionSueldo {
         val liq = LiquidacionSueldo.calcular(periodo, empleado)
         _liquidaciones.add(liq)
