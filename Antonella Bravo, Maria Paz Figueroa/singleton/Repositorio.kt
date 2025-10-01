@@ -5,17 +5,14 @@ import data.Empleado
 import data.LiquidacionSueldo
 
 object Repositorio {
-    
     val afps: List<AFP> get() = _afps
     val empleados: MutableList<Empleado> get() = _empleados
     val liquidaciones: MutableList<LiquidacionSueldo> get() = _liquidaciones
 
-    
     private val _afps = mutableListOf<AFP>()
     private val _empleados = mutableListOf<Empleado>()
     private val _liquidaciones = mutableListOf<LiquidacionSueldo>()
 
-    
     fun agregarAFP(afp: AFP) = _afps.add(afp)
     fun buscarAFPPorNombre(nombre: String): AFP? =
         _afps.find { it.nombre.equals(nombre.trim(), ignoreCase = true) }
