@@ -5,17 +5,17 @@ import data.Empleado
 import data.LiquidacionSueldo
 
 object Repositorio {
-    // Propiedades públicas como en el UML
+    
     val afps: List<AFP> get() = _afps
     val empleados: MutableList<Empleado> get() = _empleados
     val liquidaciones: MutableList<LiquidacionSueldo> get() = _liquidaciones
 
-    // Almacenamientos reales
+    
     private val _afps = mutableListOf<AFP>()
     private val _empleados = mutableListOf<Empleado>()
     private val _liquidaciones = mutableListOf<LiquidacionSueldo>()
 
-    // Helpers comunes (no rompen el UML)
+    
     fun agregarAFP(afp: AFP) = _afps.add(afp)
     fun buscarAFPPorNombre(nombre: String): AFP? =
         _afps.find { it.nombre.equals(nombre.trim(), ignoreCase = true) }
